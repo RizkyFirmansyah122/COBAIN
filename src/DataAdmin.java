@@ -430,7 +430,7 @@ public class DataAdmin extends javax.swing.JFrame {
                       pst.executeUpdate();
                        pst = con.prepareCall(add);
                        pst.executeUpdate();           
-                   JOptionPane.showMessageDialog(null, "Berhasil  Menghapus data");
+                   JOptionPane.showMessageDialog(null, "Berhasil  Mvgyvhkvkvenghapus data");
                    }catch(SQLException ex){
                           Logger.getLogger(DataAdmin.class.getName()).log(Level.SEVERE,null,ex);
                            JOptionPane.showMessageDialog(null, "Gagal Menghapus data");
