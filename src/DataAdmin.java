@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Clock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -45,13 +46,15 @@ public class DataAdmin extends javax.swing.JFrame {
        
         DefaultTableModel tableshow = new DefaultTableModel(new String[]{"NPM", "nama", "tanggal", "judul_buku", "pengarang"},0);
 
-        try{
+        try{    
             
             String coba = "SELECT *  FROM data";
             stm = con.createStatement();
             rs = stm.executeQuery(coba);
             while(rs.next()){
-                tableshow.addRow(new Object[]{ rs.getString("NPM"),rs.getString("nama"),rs.getString("tanggal"),rs.getString("judul_buku"),rs.getString("pengarang")});
+                tableshow.addRow(new Object[]{ 
+                    rs.getString("NPM"),rs.getString("nama"),rs.getString("tanggal"),rs.getString("judul_buku"),rs.getString("pengarang")
+                });
 //                 stm = con.createStatement();
                 tabledataa.setModel(tableshow);
             }
@@ -75,6 +78,7 @@ public class DataAdmin extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
                 Logger.getLogger(DataAdmin.class.getName()).log(Level.SEVERE,null,ex);
         }
+        System.err.println("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
     }
     /**
      * This method is called from within the constructor to initialize the form.
